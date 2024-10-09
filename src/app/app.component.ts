@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'trabajoDirectivaApp';
+  titulo = 'Registro de usuarios';
+  mensaje = "";
+  registrado=false;
+
+  registrarUsuario(){
+    
+    this.registrado=true;
+
+    this.mensaje="usuario registrado con éxito!";
+  }
 }
