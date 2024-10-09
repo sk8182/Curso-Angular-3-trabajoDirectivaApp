@@ -2,9 +2,9 @@
 
 <form>
 
-<input type="text" name="nombre"><br/>
+<input type="text" name="nombre" [(ngModel)]="nombre"><br/>
 
-<input type="text" name="apellido"><br/>
+<input type="text" name="apellido" [(ngModel)]="apellido"><br/>
 
 <input type="submit" value="Registrar" (click)="registrarUsuario()"><br/>
 
@@ -13,4 +13,18 @@
 <br/>
 <br/>
 
-<p *ngIf="registrado">{{mensaje}}</p>
+<p *ngIf="registrado; else sinRegistrar">{{mensaje}} con el nombre {{nombre}} y el apellido {{apellido}}</p>
+
+<ng-template #sinRegistrar> <!-- ng-template no carga por defecto, con el else lo cargo-->
+
+    <p>Nadie registrado</p>
+
+</ng-template>
+
+<br/><br/>
+
+<ul>
+
+    <li *ngFor="let entrada of entradas; let i=index"><span style="font-size: larger;font-weight: bold;">{{entrada.titulo}}</span>.Entrada{{i+1}}</li><!-- ngFor recorre el array-->
+
+</ul>
